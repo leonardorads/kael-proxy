@@ -15,7 +15,7 @@ app.post('/kael', async (req, res) => {
       'https://api.openai.com/v1/chat/completions',
       {
         model: 'gpt-3.5-turbo',
-        messages: [{ role: 'user', content: userMessage }],
+        messages: [{ role: 'user', content: usersMessage }],
       },
       {
         headers: {
