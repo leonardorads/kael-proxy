@@ -27,10 +27,10 @@ app.post('/kael', async (req, res) => {
 
     const reply = completion.data.choices[0].message.content;
     res.json({ kael: reply });
-  } catch (err) {
-    console.error(err.response?.data || err.message);
-    res.status(500).send('Erro ao processar resposta da IA.');
-  }
+} catch (err) {
+  console.error('Erro completo:', err.response ? err.response.data : err.message);
+  res.status(500).send(err.response ? err.response.data : 'Erro interno desconhecido');
+}
 });
 
 const PORT = process.env.PORT || 3000;
