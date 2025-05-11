@@ -1,12 +1,10 @@
 const express = require('express');
 const axios = require('axios');
-const cors = require('cors'); // Importa o middleware CORS
+const cors = require('cors'); // Implementação adicionada
 
 const app = express();
 
-// Permite requisições do protótipo web hospedado em manus.space
-app.use(cors({ origin: 'https://sktxzqka.manus.space' }));
-
+app.use(cors({ origin: 'https://sktxzqka.manus.space' })); // Permite conexões do app do Manus
 app.use(express.json());
 
 app.get('/', (req, res) => {
